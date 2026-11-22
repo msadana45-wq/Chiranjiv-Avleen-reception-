@@ -192,6 +192,29 @@ button { font:inherit; }
 
 /* 2. LOGO REVEAL */
 
+.wedding-logo {
+  width: min(290px, 75vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 25px;
+  object-fit: contain;
+}
+
+.logo-names {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(48px, 11vw, 76px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #451b2b;
+  text-shadow: 0.5px 0 currentColor;
+}
+
+.logo-names span {
+  display: block;
+  color: #b18a50;
+  font-size: 0.65em;
+  margin: 3px 0;
+}
 .logo-page {
   background:
     radial-gradient(ellipse at center,#fff8ef 0%,#f6e6df 72%);
@@ -242,21 +265,6 @@ button { font:inherit; }
   font-size:23px;
   color:var(--gold);
   margin:0 5px;
-}
-
-.logo-names {
-  font-family:'Great Vibes',cursive;
-  font-size:clamp(48px,10vw,78px);
-  line-height:1.3;
-  color:var(--wine);
-}
-
-.logo-caption {
-  font-family:'Cinzel',serif;
-  font-size:10px;
-  letter-spacing:5px;
-  color:var(--gold);
-  margin-top:20px;
 }
 
 /* 3. SCRATCH SAVE THE DATE */
@@ -664,20 +672,26 @@ button { font:inherit; }
 
 
 <!-- PAGE 1 INSIDE: LOGO ONLY, NO DATE -->
-<section class="logo-page" id="logoPage">
+  <section class="logo-page" id="logoPage">
   <div class="logo-content">
-    <div class="ac-logo">A<span>&</span>C</div>
+
+    <img
+      src="20865AC7-ECEE-46B0-AF59-6192D032F53E.png"
+      class="wedding-logo"
+      alt="Avleen and Chiranjiv wedding logo">
 
     <div class="logo-names">
-      Chiranjiv<br>&amp; Avleen
+      Avleen
+      <span>&</span>
+      Chiranjiv
     </div>
 
     <div class="gold-line"></div>
 
     <div class="logo-caption">A CELEBRATION OF LOVE</div>
+
   </div>
 </section>
-
 
 <!-- PAGE 2: SAVE THE DATE SCRATCH CARD -->
 <section class="scratch-page" id="saveDate">
