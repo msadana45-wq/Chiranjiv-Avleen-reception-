@@ -1,1 +1,985 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chiranjiv & Avleen | Reception</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine:#451b2b;
+  --wine-dark:#260e19;
+  --blush:#f6e6df;
+  --blush-deep:#ead0c7;
+  --gold:#b18a50;
+  --gold-light:#e7cf9d;
+  --ink:#39232a;
+  --cream:#fff8ef;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--wine-dark);
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+}
+
+section {
+  position:relative;
+  min-height:100svh;
+  overflow:hidden;
+}
+
+button { font:inherit; }
+
+/* GOLD DETAILS */
+
+.gold-line {
+  width:75px;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+  margin:24px auto;
+}
+
+.eyebrow {
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.script {
+  font-family:'Great Vibes',cursive;
+}
+
+/* FLOATING MUSIC CONTROL */
+
+.music-control {
+  position:fixed;
+  z-index:100;
+  right:19px;
+  bottom:20px;
+  width:47px;
+  height:47px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  background:rgba(38,14,25,.92);
+  color:var(--gold-light);
+  font-size:19px;
+  cursor:pointer;
+  box-shadow:0 4px 20px #0004;
+}
+
+/* 1. OPENING ENVELOPE */
+
+.cover {
+  background:
+    radial-gradient(ellipse at center,#74394a 0%,#451b2b 48%,#260e19 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+  color:var(--gold-light);
+}
+
+.cover:before {
+  content:"";
+  position:absolute;
+  inset:17px;
+  border:1px solid rgba(231,207,157,.55);
+}
+
+.cover:after {
+  content:"";
+  position:absolute;
+  inset:25px;
+  border:1px solid rgba(231,207,157,.2);
+}
+
+.cover-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:500px;
+}
+
+.cover-ornament {
+  font-size:25px;
+  color:var(--gold-light);
+  margin-bottom:25px;
+}
+
+.cover-title {
+  font-family:'Cinzel',serif;
+  font-size:clamp(16px,4vw,23px);
+  letter-spacing:5px;
+  font-weight:400;
+  line-height:1.7;
+}
+
+.envelope {
+  width:min(290px,78vw);
+  height:190px;
+  margin:45px auto 35px;
+  position:relative;
+  background:linear-gradient(145deg,#f5e1cf,#d5b58d);
+  box-shadow:0 15px 45px #13081088;
+  cursor:pointer;
+  border:1px solid #d4b77f;
+}
+
+.envelope:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,#fff0dc,#d5b58d);
+  clip-path:polygon(0 0,50% 55%,100% 0);
+  z-index:2;
+  transform-origin:top;
+  transition:transform 1s ease;
+}
+
+.envelope:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(35deg,#d4b58b,#f5e3d1);
+  clip-path:polygon(0 100%,50% 43%,100% 100%);
+  z-index:3;
+}
+
+.seal {
+  position:absolute;
+  z-index:4;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:53px;
+  height:53px;
+  background:#7a263b;
+  border:2px solid var(--gold-light);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#f5dfb7;
+  font-family:'Cinzel',serif;
+  font-size:16px;
+  box-shadow:0 3px 12px #0003;
+}
+
+.envelope.open:before {
+  transform:rotateX(180deg);
+}
+
+.tap-text {
+  color:#f2dfbd;
+  font-size:9px;
+  letter-spacing:4px;
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity:.45; }
+}
+
+/* 2. LOGO REVEAL */
+
+.logo-page {
+  background:
+    radial-gradient(ellipse at center,#fff8ef 0%,#f6e6df 72%);
+  color:var(--wine);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 25px;
+}
+
+.logo-page:before,
+.logo-page:after {
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border:1px solid rgba(177,138,80,.35);
+  border-radius:50%;
+}
+
+.logo-page:before { top:-150px; left:-100px; }
+.logo-page:after { bottom:-150px; right:-100px; }
+
+.logo-content {
+  position:relative;
+  z-index:2;
+}
+
+.ac-logo {
+  width:150px;
+  height:150px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 35px;
+  font-family:'Cinzel',serif;
+  font-size:43px;
+  color:var(--wine);
+  letter-spacing:-7px;
+  outline:1px solid rgba(177,138,80,.3);
+  outline-offset:8px;
+}
+
+.ac-logo span {
+  font-size:23px;
+  color:var(--gold);
+  margin:0 5px;
+}
+
+.logo-names {
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(48px,10vw,78px);
+  line-height:1.3;
+  color:var(--wine);
+}
+
+.logo-caption {
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--gold);
+  margin-top:20px;
+}
+
+/* 3. SCRATCH SAVE THE DATE */
+
+.scratch-page {
+  background:
+    radial-gradient(ellipse at top,#713749 0%,#451b2b 58%,#2b101c 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:90px 20px;
+  color:var(--cream);
+}
+
+.scratch-page:before {
+  content:"";
+  position:absolute;
+  inset:17px;
+  border:1px solid rgba(231,207,157,.45);
+}
+
+.scratch-content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:500px;
+}
+
+.scratch-content h2 {
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(48px,10vw,72px);
+  font-weight:400;
+  color:var(--gold-light);
+  margin:18px 0;
+}
+
+.scratch-instruction {
+  font-size:9px;
+  letter-spacing:3px;
+  color:#f3dfc6;
+  margin-bottom:28px;
+}
+
+.scratch-area {
+  position:relative;
+  width:min(320px,85vw);
+  height:145px;
+  margin:0 auto;
+  background:#fff2df;
+  border:1px solid var(--gold-light);
+  box-shadow:0 10px 35px #16081166;
+  touch-action:none;
+}
+
+.scratch-reveal {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--wine);
+  background:linear-gradient(135deg,#fff9ed,#ead1ae);
+}
+
+.scratch-reveal small {
+  font-size:9px;
+  letter-spacing:4px;
+  margin-bottom:10px;
+}
+
+.scratch-reveal strong {
+  font-family:'Cinzel',serif;
+  font-size:clamp(24px,7vw,35px);
+  font-weight:500;
+}
+
+#scratchCanvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  cursor:crosshair;
+}
+
+.scratch-hint {
+  margin-top:20px;
+  color:var(--gold-light);
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.reveal-button {
+  margin-top:20px;
+  padding:11px 20px;
+  color:var(--gold-light);
+  background:transparent;
+  border:1px solid var(--gold);
+  font-size:9px;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+
+/* 4. RECEPTION INVITATION */
+
+.invite-page {
+  background:
+    radial-gradient(ellipse at top left,#fffaf2,#f6e6df 75%);
+  color:var(--wine);
+  padding:90px 22px 75px;
+  text-align:center;
+}
+
+.invite-frame {
+  max-width:950px;
+  margin:auto;
+  border:1px solid rgba(177,138,80,.5);
+  padding:38px 25px 50px;
+  position:relative;
+}
+
+.invite-frame:before {
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid rgba(177,138,80,.2);
+  pointer-events:none;
+}
+
+.invite-heading {
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  letter-spacing:5px;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.invite-title {
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(48px,10vw,78px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+.invite-description {
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  line-height:1.5;
+  max-width:480px;
+  margin:18px auto 30px;
+  color:#70515a;
+}
+
+.couple-photo-frame {
+  width:min(370px,85%);
+  height:510px;
+  margin:35px auto;
+  overflow:hidden;
+  border:7px solid #fffaf3;
+  outline:1px solid var(--gold);
+  border-radius:190px 190px 5px 5px;
+  box-shadow:0 12px 35px #5a2a3425;
+  background:#e8d0c4;
+}
+
+.couple-photo {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 24%;
+  display:block;
+}
+
+.invite-names {
+  font-family:'Cinzel',serif;
+  font-size:clamp(19px,5vw,27px);
+  letter-spacing:2px;
+  line-height:1.7;
+  color:var(--wine);
+}
+
+.invite-date {
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  color:var(--gold);
+  margin:20px 0 8px;
+}
+
+.invite-time {
+  font-size:10px;
+  letter-spacing:4px;
+  margin:12px 0 25px;
+}
+
+.venue-name {
+  font-family:'Cinzel',serif;
+  font-size:17px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.venue-address {
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  line-height:1.5;
+  color:#795b60;
+}
+
+.map-button {
+  display:inline-block;
+  margin-top:28px;
+  padding:15px 27px;
+  background:var(--wine);
+  border:1px solid var(--gold);
+  color:#f6e6df;
+  font-size:9px;
+  letter-spacing:3px;
+  transition:.3s;
+}
+
+.map-button:hover {
+  background:var(--gold);
+  color:var(--wine);
+}
+
+/* 5. COUNTDOWN */
+
+.countdown-page {
+  background:
+    radial-gradient(ellipse at center,#71384a 0%,#451b2b 58%,#260e19 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:var(--cream);
+  padding:90px 20px;
+}
+
+.countdown-page:before {
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(231,207,157,.45);
+}
+
+.countdown-inner {
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+
+.countdown-inner h2 {
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(54px,11vw,85px);
+  font-weight:400;
+  color:var(--gold-light);
+  margin:25px 0 12px;
+}
+
+.countdown-inner p {
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  color:#f1dcd0;
+}
+
+.timer {
+  display:flex;
+  justify-content:center;
+  gap:clamp(15px,5vw,45px);
+  flex-wrap:wrap;
+  margin:55px auto;
+}
+
+.timer-item { min-width:60px; }
+
+.timer-item strong {
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:clamp(30px,7vw,49px);
+  font-weight:400;
+  color:var(--gold-light);
+}
+
+.timer-item small {
+  display:block;
+  margin-top:10px;
+  font-size:8px;
+  letter-spacing:3px;
+  color:#e8cbb8;
+}
+
+/* 6. CLOSING PAGE */
+
+.closing-page {
+  background:
+    radial-gradient(ellipse at center,#fff9f1,#f1ded6);
+  color:var(--wine);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:85px 22px;
+}
+
+.closing-inner {
+  max-width:600px;
+  width:100%;
+  position:relative;
+  z-index:2;
+}
+
+.closing-ornament {
+  color:var(--gold);
+  font-size:30px;
+  margin-bottom:22px;
+}
+
+.closing-title {
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(52px,10vw,82px);
+  font-weight:400;
+}
+
+.punchline {
+  max-width:420px;
+  margin:22px auto;
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  line-height:1.5;
+  color:#75545d;
+}
+
+.hashtag {
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:15px;
+  margin:30px 0;
+}
+
+.closing-map {
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--wine);
+  padding:15px 24px;
+  font-size:9px;
+  letter-spacing:3px;
+  margin-top:8px;
+}
+
+.closing-names {
+  font-family:'Cinzel',serif;
+  font-size:12px;
+  letter-spacing:3px;
+  margin-top:45px;
+}
+
+/* MOBILE */
+
+@media(max-width:500px) {
+  .couple-photo-frame {
+    height:430px;
+    width:88%;
+  }
+
+  .invite-frame { padding:32px 15px 40px; }
+
+  .scratch-area { height:135px; }
+
+  .timer { gap:18px; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="weddingMusic" preload="auto">
+  <source src="Jodi.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-control" id="musicButton"
+        aria-label="Toggle music" onclick="toggleMusic()">♫</button>
+
+
+<!-- PAGE 1: OPENING ENVELOPE -->
+<section class="cover" id="cover">
+  <div class="cover-content">
+    <div class="cover-ornament">✧ ❀ ✧</div>
+    <div class="eyebrow">A royal celebration awaits</div>
+
+    <h1 class="cover-title">
+      YOU ARE CORDIALLY<br>
+      INVITED
+    </h1>
+
+    <div class="envelope" id="envelope" onclick="openInvitation()">
+      <div class="seal">A&C</div>
+    </div>
+
+    <div class="tap-text">TAP TO OPEN YOUR INVITATION</div>
+  </div>
+</section>
+
+
+<!-- PAGE 1 INSIDE: LOGO ONLY, NO DATE -->
+<section class="logo-page" id="logoPage">
+  <div class="logo-content">
+    <div class="ac-logo">A<span>&</span>C</div>
+
+    <div class="logo-names">
+      Chiranjiv<br>&amp; Avleen
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="logo-caption">A CELEBRATION OF LOVE</div>
+  </div>
+</section>
+
+
+<!-- PAGE 2: SAVE THE DATE SCRATCH CARD -->
+<section class="scratch-page" id="saveDate">
+  <div class="scratch-content">
+    <div class="eyebrow">A little surprise awaits</div>
+
+    <h2>Save the Date</h2>
+
+    <div class="scratch-instruction">
+      SCRATCH TO REVEAL OUR SPECIAL DAY
+    </div>
+
+    <div class="scratch-area" id="scratchArea">
+      <div class="scratch-reveal">
+        <small>THE RECEPTION</small>
+        <strong>08 · 02 · 2027</strong>
+      </div>
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+
+    <div class="scratch-hint">✧ RUB THE GOLDEN SURFACE ✧</div>
+
+    <button class="reveal-button" onclick="revealDate()">
+      REVEAL DATE
+    </button>
+  </div>
+</section>
+
+
+<!-- PAGE 3: RECEPTION INVITATION -->
+<section class="invite-page" id="invitation">
+  <div class="invite-frame">
+    <div class="invite-heading">THE WEDDING RECEPTION</div>
+
+    <h2 class="invite-title">Together with our families</h2>
+
+    <div class="gold-line"></div>
+
+    <p class="invite-description">
+      With hearts filled with joy, we request
+      the pleasure of your company as we
+      celebrate the beginning of our forever.
+    </p>
+
+    <!-- Upload IMG_9256.jpeg to the same GitHub folder as index.html -->
+    <div class="couple-photo-frame">
+      <img
+        src="IMG_9256.jpeg"
+        class="couple-photo"
+        alt="Chiranjiv and Avleen reception portrait">
+    </div>
+
+    <div class="invite-names">
+      CHIRANJIV SINGH<br>
+      <span style="color:#b18a50;font-family:'Great Vibes';font-size:35px;">&amp;</span><br>
+      AVLEEN KAUR
+    </div>
+
+    <div class="invite-date">Monday · 8 February 2027</div>
+
+    <div class="invite-time">8:00 PM ONWARDS</div>
+
+    <div class="gold-line"></div>
+
+    <div class="eyebrow" style="color:#b18a50;margin-bottom:15px;">
+      THE CELEBRATION VENUE
+    </div>
+
+    <div class="venue-name">UTSAV FOREST RESORT</div>
+
+    <div class="venue-address">
+      Verka, Bypass Road,<br>
+      Vallah, Amritsar
+    </div>
+
+    <a class="map-button"
+       href="https://maps.app.goo.gl/j1tkPJsKLdZVAtE4A?g_st=ic"
+       target="_blank" rel="noopener">
+      GET DIRECTIONS ↗
+    </a>
+  </div>
+</section>
+
+
+<!-- PAGE 4: COUNTDOWN -->
+<section class="countdown-page" id="countdown">
+  <div class="countdown-inner">
+    <div class="eyebrow">The wait is almost over</div>
+
+    <h2>Until Forever</h2>
+
+    <p>Counting moments until we celebrate together</p>
+
+    <div class="gold-line"></div>
+
+    <div class="timer">
+      <div class="timer-item">
+        <strong id="days">000</strong>
+        <small>DAYS</small>
+      </div>
+
+      <div class="timer-item">
+        <strong id="hours">00</strong>
+        <small>HOURS</small>
+      </div>
+
+      <div class="timer-item">
+        <strong id="minutes">00</strong>
+        <small>MINUTES</small>
+      </div>
+
+      <div class="timer-item">
+        <strong id="seconds">00</strong>
+        <small>SECONDS</small>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="color:#e7cf9d;">
+      08 FEBRUARY 2027 · 8:00 PM
+    </div>
+  </div>
+</section>
+
+
+<!-- PAGE 5: CLOSING -->
+<section class="closing-page" id="closing">
+  <div class="closing-inner">
+
+    <div class="closing-ornament">✧ ❀ ✧</div>
+
+    <div class="eyebrow" style="color:#b18a50;">
+      Until we celebrate together
+    </div>
+
+    <h2 class="closing-title">See you there!</h2>
+
+    <div class="gold-line"></div>
+
+    <p class="punchline">
+      One magical evening, countless beautiful memories,
+      and a lifetime of love to follow.
+    </p>
+
+    <div class="hashtag">#AngSangMuskaan</div>
+
+    <a class="closing-map"
+       href="https://maps.app.goo.gl/j1tkPJsKLdZVAtE4A?g_st=ic"
+       target="_blank" rel="noopener">
+      FIND YOUR WAY TO THE CELEBRATION ↗
+    </a>
+
+    <div class="closing-names">
+      CHIRANJIV & AVLEEN
+    </div>
+  </div>
+</section>
+
+
+<script>
+// OPEN ENVELOPE AND START MUSIC
+let invitationOpened = false;
+
+function openInvitation() {
+  if (invitationOpened) return;
+  invitationOpened = true;
+
+  document.getElementById("envelope").classList.add("open");
+
+  const music = document.getElementById("weddingMusic");
+  music.currentTime = 41;
+
+  music.play().then(() => {
+    document.getElementById("musicButton").textContent = "♫";
+  }).catch(() => {
+    document.getElementById("musicButton").textContent = "▶";
+  });
+
+  setTimeout(() => {
+    document.getElementById("logoPage").scrollIntoView({
+      behavior:"smooth"
+    });
+  }, 700);
+}
+
+
+// MUSIC BUTTON
+function toggleMusic() {
+  const music = document.getElementById("weddingMusic");
+  const button = document.getElementById("musicButton");
+
+  if (music.paused) {
+    if (music.currentTime === 0) music.currentTime = 41;
+
+    music.play().then(() => {
+      button.textContent = "♫";
+    }).catch(() => {
+      button.textContent = "▶";
+    });
+  } else {
+    music.pause();
+    button.textContent = "▶";
+  }
+}
+
+
+// SCRATCH CARD
+const canvas = document.getElementById("scratchCanvas");
+const ctx = canvas.getContext("2d");
+const scratchArea = document.getElementById("scratchArea");
+
+function setupScratch() {
+  const rect = scratchArea.getBoundingClientRect();
+  const ratio = window.devicePixelRatio || 1;
+
+  canvas.width = rect.width * ratio;
+  canvas.height = rect.height * ratio;
+  canvas.style.width = rect.width + "px";
+  canvas.style.height = rect.height + "px";
+
+  ctx.setTransform(ratio,0,0,ratio,0,0);
+
+  const gradient = ctx.createLinearGradient(0,0,rect.width,rect.height);
+  gradient.addColorStop(0,"#e8d1a8");
+  gradient.addColorStop(.5,"#c5a36a");
+  gradient.addColorStop(1,"#f1dfbb");
+
+  ctx.globalCompositeOperation = "source-over";
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0,0,rect.width,rect.height);
+
+  ctx.fillStyle = "#563329";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = "10px Montserrat";
+  ctx.fillText("✧  SCRATCH HERE  ✧",rect.width/2,rect.height/2);
+
+  ctx.globalCompositeOperation = "destination-out";
+}
+
+let scratching = false;
+
+function scratchAt(event) {
+  if (!scratching) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const point = event.touches ? event.touches[0] : event;
+
+  const x = point.clientX - rect.left;
+  const y = point.clientY - rect.top;
+
+  ctx.beginPath();
+  ctx.arc(x,y,19,0,Math.PI*2);
+  ctx.fill();
+}
+
+canvas.addEventListener("pointerdown", event => {
+  scratching = true;
+  canvas.setPointerCapture(event.pointerId);
+  scratchAt(event);
+});
+
+canvas.addEventListener("pointermove", scratchAt);
+canvas.addEventListener("pointerup", () => scratching = false);
+canvas.addEventListener("pointercancel", () => scratching = false);
+
+function revealDate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+setupScratch();
+
+
+// COUNTDOWN — 8 FEBRUARY 2027, 8 PM IST
+const targetDate = new Date("2027-02-08T20:00:00+05:30").getTime();
+
+function updateCountdown() {
+  const distance = targetDate - Date.now();
+
+  if (distance <= 0) {
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    String(Math.floor(distance / 86400000)).padStart(3,"0");
+
+  document.getElementById("hours").textContent =
+    String(Math.floor(distance / 3600000) % 24).padStart(2,"0");
+
+  document.getElementById("minutes").textContent =
+    String(Math.floor(distance / 60000) % 60).padStart(2,"0");
+
+  document.getElementById("seconds").textContent =
+    String(Math.floor(distance / 1000) % 60).padStart(2,"0");
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+</script>
+</body>
+</html>
+
