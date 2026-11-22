@@ -1,540 +1,721 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chiranjiv & Avleen | Reception</title>
+<title>Chiranjiv & Avleen | The Reception</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --black: #080808;
-  --gold: #c9a45c;
-  --light-gold: #ead5a0;
-  --muted-gold: #927444;
-  --cream: #f4ead4;
+  --black:#090909;
+  --gold:#c5a36a;
+  --gold-light:#e8d4a8;
+  --ivory:#f3eee5;
+  --wine:#391c27;
+  --ink:#191713;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
-  background: var(--black);
-  color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
-  overflow-x: hidden;
+  overflow-x:hidden;
+  background:var(--black);
+  color:var(--ivory);
+  font-family:'DM Sans',sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 5;
-  opacity: .22;
-  background-image:
-    radial-gradient(circle at 20% 20%, #c9a45c 0.7px, transparent 1px),
-    radial-gradient(circle at 80% 70%, #c9a45c 0.6px, transparent 1px);
-  background-size: 90px 90px, 130px 130px;
+a { color:inherit; text-decoration:none; }
+
+/* NAVIGATION */
+
+.nav {
+  position:fixed;
+  z-index:100;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:25px;
+  padding:12px 23px;
+  border:1px solid rgba(197,163,106,.35);
+  background:rgba(8,8,8,.82);
+  backdrop-filter:blur(14px);
+  border-radius:40px;
+  white-space:nowrap;
 }
 
-.gold {
-  color: var(--gold);
+.nav a {
+  color:#e8d4a8;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.3s;
 }
 
-.hero {
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 65px 22px;
-  position: relative;
-  background:
-    radial-gradient(ellipse at center, #241b0d 0%, #100d08 42%, #080808 78%);
+.nav a:hover { color:white; }
+
+.nav-logo {
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  font-size:13px;
+  letter-spacing:1px;
 }
 
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(201,164,92,.25);
-  transform: rotate(45deg);
-}
-
-.hero::before {
-  top: -155px;
-  left: -100px;
-}
-
-.hero::after {
-  bottom: -155px;
-  right: -100px;
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 750px;
-  position: relative;
-  z-index: 2;
-  animation: appear 1.5s ease both;
-}
-
-.monogram {
-  width: 100px;
-  height: 100px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 28px;
-  color: var(--light-gold);
-  font-family: 'Cinzel', serif;
-  font-size: 28px;
-  letter-spacing: -4px;
-  box-shadow: 0 0 35px rgba(201,164,92,.12);
-}
-
-.small-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(55px, 11vw, 100px);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--light-gold);
-  margin: 25px 0 15px;
-}
-
-.ampersand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 35px;
-  color: var(--gold);
-  margin: 0 12px;
-}
-
-.hero-subtitle {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  letter-spacing: 4px;
-  color: var(--cream);
-  margin-top: 25px;
-}
-
-.gold-line {
-  width: 90px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-  margin: 28px auto;
-}
-
-.hero-date {
-  font-size: 22px;
-  letter-spacing: 3px;
-  color: var(--light-gold);
-}
-
-.scroll-note {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: var(--muted-gold);
-}
+/* GENERAL */
 
 section {
-  padding: 90px 22px;
-  text-align: center;
-  position: relative;
+  position:relative;
+  overflow:hidden;
 }
 
-.invitation {
-  background: #0c0b09;
+.eyebrow {
+  font-size:9px;
+  letter-spacing:5px;
+  text-transform:uppercase;
 }
 
-.section-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: var(--gold);
-  margin-bottom: 25px;
-}
+.gold { color:var(--gold); }
 
-.invitation h2 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 5vw, 36px);
-  font-weight: 400;
-  line-height: 1.7;
-  color: var(--light-gold);
-}
-
-.invitation p {
-  max-width: 510px;
-  margin: 25px auto 0;
-  font-size: 21px;
-  line-height: 1.6;
-  color: #c9bea8;
-}
-
-.event {
-  background:
-    linear-gradient(rgba(8,8,8,.94), rgba(8,8,8,.97)),
-    radial-gradient(ellipse at center, #493719, #080808);
-  border-top: 1px solid rgba(201,164,92,.22);
-  border-bottom: 1px solid rgba(201,164,92,.22);
-}
-
-.event-date {
-  font-family: 'Cinzel', serif;
-  color: var(--light-gold);
-  font-size: clamp(28px, 7vw, 48px);
-  line-height: 1.5;
-  margin: 18px 0;
-}
-
-.event-time {
-  font-size: 25px;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
-
-.event-caption {
-  font-family: 'Poppins', sans-serif;
-  color: #a99a7d;
-  font-size: 10px;
-  letter-spacing: 4px;
-  margin-top: 10px;
-}
-
-.countdown-section {
-  background: #0b0a08;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 35px;
-}
-
-.count-box {
-  min-width: 65px;
-}
-
-.count-box span {
-  display: block;
-  font-family: 'Cinzel', serif;
-  color: var(--light-gold);
-  font-size: clamp(28px, 7vw, 42px);
-}
-
-.count-box small {
-  display: block;
-  color: var(--muted-gold);
-  font-family: 'Poppins', sans-serif;
-  font-size: 9px;
-  letter-spacing: 2px;
-  margin-top: 8px;
-}
-
-.venue {
-  background: #100e0a;
-  border-top: 1px solid rgba(201,164,92,.2);
-}
-
-.venue-icon {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.venue h2 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(23px, 5vw, 35px);
-  font-weight: 400;
-  color: var(--light-gold);
-  margin: 15px 0;
-}
-
-.venue p {
-  font-size: 20px;
-  color: #c9bea8;
-  margin: 10px 0 28px;
-}
-
-.map-button {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 1px solid var(--gold);
-  color: var(--light-gold);
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  transition: .3s ease;
-}
-
-.map-button:hover {
-  background: var(--gold);
-  color: #080808;
-}
-
-.footer {
-  padding: 55px 20px 65px;
-  text-align: center;
-  background: #070707;
-}
-
-.footer .names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: var(--light-gold);
-}
-
-.footer p {
-  font-family: 'Poppins', sans-serif;
-  color: var(--muted-gold);
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 15px;
+.line {
+  width:55px;
+  height:1px;
+  background:var(--gold);
+  margin:25px auto;
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 1s ease, transform 1s ease;
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity 1s ease, transform 1s ease;
 }
 
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* PAGE 1 — HERO */
+
+.hero {
+  min-height:100svh;
+  background:
+    radial-gradient(ellipse at 50% 48%,#292014 0%,#100e0a 40%,#070707 80%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:100px 22px 70px;
 }
 
-@media (max-width: 480px) {
-  section {
-    padding: 75px 20px;
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:24px;
+  border:1px solid rgba(197,163,106,.28);
+  pointer-events:none;
+}
+
+.hero:after {
+  content:"";
+  position:absolute;
+  inset:34px;
+  border:1px solid rgba(197,163,106,.09);
+  pointer-events:none;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  animation:heroIn 1.5s ease both;
+}
+
+.monogram {
+  width:90px;
+  height:90px;
+  margin:0 auto 34px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Italiana',serif;
+  color:var(--gold-light);
+  font-size:29px;
+  letter-spacing:-4px;
+  box-shadow:0 0 40px rgba(197,163,106,.12);
+}
+
+.hero .eyebrow { color:var(--gold); }
+
+.hero h1 {
+  font-family:'Italiana',serif;
+  font-size:clamp(57px,11vw,112px);
+  line-height:.98;
+  font-weight:400;
+  color:#f2e6cf;
+  margin:35px 0 23px;
+}
+
+.hero h1 span {
+  display:block;
+  font-size:.42em;
+  color:var(--gold);
+  margin:15px 0;
+}
+
+.hero-bottom {
+  color:#c6b99e;
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  letter-spacing:3px;
+}
+
+.hero-date {
+  margin-top:35px;
+  color:var(--gold-light);
+  font-size:11px;
+  letter-spacing:5px;
+}
+
+.scroll {
+  position:absolute;
+  bottom:32px;
+  left:0;
+  right:0;
+  color:#9b8052;
+  font-size:8px;
+  letter-spacing:4px;
+}
+
+/* PAGE 2 — IVORY INVITATION */
+
+.invitation {
+  min-height:85svh;
+  background:
+    radial-gradient(ellipse at top left,rgba(255,255,255,.7),transparent 45%),
+    var(--ivory);
+  color:var(--ink);
+  display:grid;
+  place-items:center;
+  padding:110px 25px;
+}
+
+.invitation-inner {
+  max-width:740px;
+  width:100%;
+  text-align:center;
+  position:relative;
+  padding:70px 35px;
+  border:1px solid rgba(160,125,70,.5);
+  outline:1px solid rgba(160,125,70,.18);
+  outline-offset:9px;
+}
+
+.invitation .eyebrow { color:#987747; }
+
+.invitation h2 {
+  font-family:'Italiana',serif;
+  font-size:clamp(42px,8vw,75px);
+  font-weight:400;
+  line-height:1.1;
+  margin:30px 0;
+}
+
+.invitation h2 em {
+  color:#a5834b;
+  font-style:normal;
+}
+
+.invitation p {
+  max-width:480px;
+  margin:auto;
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  line-height:1.55;
+  color:#655d50;
+}
+
+.invitation .line { background:#a5834b; }
+
+/* PAGE 3 — EVENT DETAILS */
+
+.details {
+  min-height:90svh;
+  background:#10100e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:110px 25px;
+}
+
+.details-inner {
+  max-width:950px;
+  width:100%;
+  text-align:center;
+}
+
+.details-top {
+  color:var(--gold);
+}
+
+.details h2 {
+  font-family:'Italiana',serif;
+  font-size:clamp(48px,10vw,100px);
+  font-weight:400;
+  line-height:1;
+  margin:35px 0;
+  color:#eee4d2;
+}
+
+.details h2 span {
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.35em;
+  letter-spacing:7px;
+  color:var(--gold);
+  margin-top:24px;
+}
+
+.event-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid rgba(197,163,106,.35);
+  border-bottom:1px solid rgba(197,163,106,.35);
+  margin-top:65px;
+}
+
+.event-cell {
+  padding:35px 15px;
+}
+
+.event-cell + .event-cell {
+  border-left:1px solid rgba(197,163,106,.35);
+}
+
+.event-cell small {
+  display:block;
+  color:#a88d5e;
+  font-size:9px;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+
+.event-cell strong {
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  font-weight:400;
+  color:#f0e3ca;
+}
+
+/* PAGE 4 — COUNTDOWN */
+
+.countdown-section {
+  min-height:80svh;
+  background:
+    radial-gradient(ellipse at center,#653a43 0%,#421f2b 44%,#28151c 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.countdown-section:before {
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(232,212,168,.25);
+}
+
+.countdown-inner {
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+
+.countdown-section .eyebrow {
+  color:#e2c99a;
+}
+
+.countdown-section h2 {
+  font-family:'Italiana',serif;
+  font-weight:400;
+  font-size:clamp(42px,8vw,78px);
+  margin:25px 0 12px;
+  color:#f4e9d7;
+}
+
+.countdown-section p {
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  color:#dfc9bd;
+}
+
+.timer {
+  display:flex;
+  justify-content:center;
+  gap:clamp(15px,5vw,55px);
+  flex-wrap:wrap;
+  margin:55px auto 0;
+}
+
+.timer-item {
+  min-width:65px;
+}
+
+.timer-item span {
+  display:block;
+  font-family:'Italiana',serif;
+  font-size:clamp(38px,8vw,65px);
+  color:#f0d8a8;
+}
+
+.timer-item small {
+  display:block;
+  margin-top:8px;
+  color:#d4b38c;
+  font-size:8px;
+  letter-spacing:3px;
+}
+
+/* PAGE 5 — VENUE */
+
+.venue {
+  min-height:90svh;
+  background:#eae1d3;
+  color:#171512;
+  display:grid;
+  place-items:center;
+  padding:110px 25px;
+}
+
+.venue-inner {
+  max-width:850px;
+  width:100%;
+  text-align:center;
+}
+
+.venue .eyebrow { color:#92703f; }
+
+.venue-heading {
+  font-family:'Italiana',serif;
+  font-size:clamp(45px,9vw,85px);
+  font-weight:400;
+  line-height:1.05;
+  margin:30px 0;
+}
+
+.venue-symbol {
+  font-size:28px;
+  color:#a27e47;
+  margin:25px 0;
+}
+
+.venue-address {
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  color:#61594d;
+  line-height:1.5;
+}
+
+.map-link {
+  display:inline-block;
+  margin-top:35px;
+  padding:17px 33px;
+  background:#15130f;
+  color:#e8d4a8;
+  font-size:9px;
+  letter-spacing:3px;
+  transition:.35s;
+  border:1px solid #15130f;
+}
+
+.map-link:hover {
+  background:transparent;
+  color:#15130f;
+}
+
+/* FINAL */
+
+.footer {
+  background:#080808;
+  padding:80px 20px;
+  text-align:center;
+}
+
+.footer-monogram {
+  font-family:'Italiana',serif;
+  font-size:44px;
+  color:var(--gold);
+}
+
+.footer-names {
+  font-family:'Italiana',serif;
+  font-size:clamp(30px,6vw,55px);
+  color:#eee2cc;
+  margin:22px 0;
+}
+
+.footer p {
+  font-size:8px;
+  letter-spacing:4px;
+  color:#a58a5b;
+}
+
+@keyframes heroIn {
+  from {opacity:0; transform:translateY(25px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:600px) {
+  .nav {
+    gap:13px;
+    padding:12px 15px;
+    max-width:94%;
   }
 
-  .countdown {
-    gap: 18px;
+  .nav a {
+    font-size:7px;
+    letter-spacing:1px;
   }
 
-  .count-box {
-    min-width: 58px;
+  .nav-logo { font-size:11px; }
+
+  .hero:before { inset:14px; }
+  .hero:after { inset:22px; }
+
+  .invitation-inner {
+    padding:55px 22px;
   }
 
-  .hero h1 {
-    font-size: 62px;
-  }
+  .event-grid { margin-top:45px; }
+  .event-cell { padding:27px 8px; }
+  .event-cell strong { font-size:23px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- OPENING -->
-<header class="hero">
-  <div class="hero-content">
-    <div class="monogram">A<span style="color:#c9a45c">&</span>C</div>
+<nav class="nav">
+  <a href="#home">Home</a>
+  <a href="#invitation">Invite</a>
+  <div class="nav-logo">A&C</div>
+  <a href="#countdown">Countdown</a>
+  <a href="#venue">Venue</a>
+</nav>
 
-    <div class="small-heading">Together with our families</div>
+<!-- 01: BLACK HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="monogram">A<span style="color:#c5a36a">&</span>C</div>
+
+    <div class="eyebrow">A celebration of forever</div>
 
     <h1>
-      Chiranjiv<br>
-      <span class="ampersand">&</span><br>
+      Chiranjiv
+      <span>&</span>
       Avleen
     </h1>
 
-    <div class="gold-line"></div>
-
-    <div class="hero-subtitle">THE RECEPTION</div>
-
-    <div class="gold-line"></div>
+    <div class="hero-bottom">The Wedding Reception</div>
 
     <div class="hero-date">08 · 02 · 2027</div>
   </div>
 
-  <div class="scroll-note">SCROLL TO EXPLORE ↓</div>
-</header>
-
-
-<!-- INVITATION -->
-<section class="invitation reveal">
-  <div class="section-label">A Celebration of Love</div>
-
-  <h2>
-    Two hearts.<br>
-    One beautiful beginning.
-  </h2>
-
-  <div class="gold-line"></div>
-
-  <p>
-    With immense joy, we invite you to join us
-    as we celebrate the beginning of our
-    forever. Your presence will make our
-    evening truly special.
-  </p>
+  <div class="scroll">SCROLL TO DISCOVER ↓</div>
 </section>
 
+<!-- 02: IVORY INVITATION -->
+<section class="invitation" id="invitation">
+  <div class="invitation-inner reveal">
+    <div class="eyebrow">Together with our families</div>
 
-<!-- EVENT DETAILS -->
-<section class="event reveal">
-  <div class="section-label">Save the Evening</div>
+    <div class="line"></div>
 
-  <div class="event-date">
-    08 February 2027
-  </div>
+    <h2>
+      An evening<br>
+      to celebrate <em>love.</em>
+    </h2>
 
-  <div class="event-time">8:00 PM onwards</div>
+    <p>
+      With hearts full of happiness,
+      we invite you to join us as we celebrate
+      the beginning of our forever.
 
-  <div class="event-caption">MONDAY · RECEPTION CELEBRATION</div>
+      Your presence will make our celebration
+      even more beautiful.
+    </p>
 
-  <div class="gold-line"></div>
-</section>
+    <div class="line"></div>
 
-
-<!-- COUNTDOWN -->
-<section class="countdown-section reveal">
-  <div class="section-label">The Celebration Begins In</div>
-
-  <div class="countdown">
-    <div class="count-box">
-      <span id="days">00</span>
-      <small>DAYS</small>
-    </div>
-
-    <div class="count-box">
-      <span id="hours">00</span>
-      <small>HOURS</small>
-    </div>
-
-    <div class="count-box">
-      <span id="minutes">00</span>
-      <small>MINUTES</small>
-    </div>
-
-    <div class="count-box">
-      <span id="seconds">00</span>
-      <small>SECONDS</small>
-    </div>
+    <div class="eyebrow">Your presence is our greatest gift</div>
   </div>
 </section>
 
+<!-- 03: BLACK EVENT DETAILS -->
+<section class="details" id="details">
+  <div class="details-inner reveal">
 
-<!-- VENUE -->
-<section class="venue reveal">
-  <div class="venue-icon">✧ 📍 ✧</div>
+    <div class="eyebrow details-top">Mark your calendars</div>
 
-  <div class="section-label">The Celebration Awaits</div>
+    <h2>
+      08.02
+      <span>MONDAY · FEBRUARY 2027</span>
+    </h2>
 
-  <h2>Utsav Forest Resort</h2>
+    <div class="line"></div>
 
-  <p>
-    Join us for an evening of love,<br>
-    laughter and togetherness.
-  </p>
+    <div class="event-grid">
+      <div class="event-cell">
+        <small>THE DATE</small>
+        <strong>08 February</strong>
+      </div>
 
-  <a
-    class="map-button"
-    href="https://maps.app.goo.gl/j1tkPJsKLdZVAtE4A?g_st=ic"
-    target="_blank"
-    rel="noopener noreferrer">
-    GET DIRECTIONS ↗
-  </a>
+      <div class="event-cell">
+        <small>THE TIME</small>
+        <strong>8:00 PM onwards</strong>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+<!-- 04: BURGUNDY COUNTDOWN -->
+<section class="countdown-section" id="countdown">
+  <div class="countdown-inner reveal">
 
-<!-- CLOSING -->
+    <div class="eyebrow">The night is getting closer</div>
+
+    <h2>Until Forever</h2>
+
+    <p>Counting down to our special evening</p>
+
+    <div class="timer">
+      <div class="timer-item">
+        <span id="days">000</span>
+        <small>DAYS</small>
+      </div>
+
+      <div class="timer-item">
+        <span id="hours">00</span>
+        <small>HOURS</small>
+      </div>
+
+      <div class="timer-item">
+        <span id="minutes">00</span>
+        <small>MINUTES</small>
+      </div>
+
+      <div class="timer-item">
+        <span id="seconds">00</span>
+        <small>SECONDS</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05: CHAMPAGNE VENUE -->
+<section class="venue" id="venue">
+  <div class="venue-inner reveal">
+
+    <div class="eyebrow">The place to be</div>
+
+    <div class="venue-symbol">✧</div>
+
+    <h2 class="venue-heading">
+      Let's meet<br>
+      at the celebration.
+    </h2>
+
+    <div class="line"></div>
+
+    <div class="venue-address">
+      Utsav Forest Resort<br>
+      8 February 2027 · 8:00 PM
+    </div>
+
+    <a
+      class="map-link"
+      href="https://maps.app.goo.gl/j1tkPJsKLdZVAtE4A?g_st=ic"
+      target="_blank"
+      rel="noopener noreferrer">
+      VIEW LOCATION ↗
+    </a>
+
+  </div>
+</section>
+
+<!-- 06: BLACK CLOSING -->
 <footer class="footer">
-  <div class="gold-line"></div>
+  <div class="footer-monogram">A & C</div>
 
-  <div class="names">Chiranjiv & Avleen</div>
+  <div class="footer-names">Chiranjiv & Avleen</div>
 
-  <p>WE LOOK FORWARD TO CELEBRATING WITH YOU</p>
+  <div class="line"></div>
 
-  <div class="gold-line"></div>
+  <p>ONE EVENING · A LIFETIME OF MEMORIES</p>
 </footer>
 
-
 <script>
-// Countdown to 8 February 2027, 8:00 PM IST
-const targetDate = new Date("2027-02-08T20:00:00+05:30").getTime();
+// Reception countdown — 8 February 2027, 8 PM IST
+const target = new Date("2027-02-08T20:00:00+05:30").getTime();
 
-function updateCountdown() {
-  const now = Date.now();
-  const distance = targetDate - now;
+function updateTimer() {
+  const distance = target - Date.now();
 
   if (distance <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
     return;
   }
 
   document.getElementById("days").textContent =
-    String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, "0");
+    Math.floor(distance / 86400000);
 
   document.getElementById("hours").textContent =
-    String(Math.floor((distance / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+    String(Math.floor(distance / 3600000) % 24).padStart(2,"0");
 
   document.getElementById("minutes").textContent =
-    String(Math.floor((distance / (1000 * 60)) % 60)).padStart(2, "0");
+    String(Math.floor(distance / 60000) % 60).padStart(2,"0");
 
   document.getElementById("seconds").textContent =
-    String(Math.floor((distance / 1000) % 60)).padStart(2, "0");
+    String(Math.floor(distance / 1000) % 60).padStart(2,"0");
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+updateTimer();
+setInterval(updateTimer,1000);
 
-
-// Reveal sections gently while scrolling
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+},{threshold:0.12});
 
-document.querySelectorAll(".reveal").forEach(section => {
-  observer.observe(section);
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
 });
 </script>
 
